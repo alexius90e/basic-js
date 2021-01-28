@@ -9,7 +9,6 @@ module.exports = function dateSample(sampleActivity) {
   if (sampleActivity === undefined) return false;
   if (+sampleActivity > 0 && +sampleActivity < MODERN_ACTIVITY) {
     let t = Math.log(MODERN_ACTIVITY / +sampleActivity) * HALF_LIFE_PERIOD / 0.693;
-    console.log(Math.ceil(t));
     return Math.ceil(t);
   } else {
     return false;
