@@ -8,7 +8,8 @@ module.exports = function dateSample(sampleActivity) {
   if (isNaN(+sampleActivity)) return false;
   if (sampleActivity === undefined) return false;
   if (+sampleActivity > 0 && +sampleActivity < MODERN_ACTIVITY) {
-    let t = Math.log(MODERN_ACTIVITY / +sampleActivity) * HALF_LIFE_PERIOD / 0.693;
+    let t = Math.log(MODERN_ACTIVITY / +sampleActivity) * HALF_LIFE_PERIOD / Math.log(2);
+    console.log(Math.ceil(t));
     return Math.ceil(t);
   } else {
     return false;
